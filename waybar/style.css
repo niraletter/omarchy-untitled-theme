@@ -1,0 +1,151 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+    background-color: transparent;
+    color: #1b140a;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "CaskaydiaMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+.modules-left {
+    margin-left: 5px;
+}
+
+.modules-right {
+    margin-right: 0px;
+}
+
+#workspaces,
+#clock,
+#cpu,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#tray,
+#custom-omarchy,
+#custom-update,
+#custom-voxtype,
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+    margin: 4px 8px 0px 0px;
+    padding: 2px 8px 2px 8px;
+    color: #1b140a;
+    background-color: #b3976d;
+    border: 2px solid #8c734e;
+}
+
+#workspaces button {
+    all: initial;
+    padding: 0 6px;
+    margin: 0 4.5px;
+    min-width: 9px;
+    color: #1b140a;
+    background-color: transparent;
+    font-family: "CaskaydiaMono Nerd Font";
+    font-size: 12px;
+}
+
+#workspaces button.empty {
+    opacity: 0.5;
+}
+
+#workspaces button.active {
+    color: #1b140a;
+    font-weight: bold;
+}
+
+#cpu,
+#battery,
+#pulseaudio,
+#custom-omarchy,
+#custom-update {
+    min-width: 12px;
+    margin-right: 4;
+}
+
+#tray {
+    margin-right: 6px;
+}
+
+#bluetooth {
+    margin-right: 6px;
+}
+
+#network {
+    margin-right: 5px;
+}
+
+
+tooltip {
+    background-color: #b3976d;
+    border: 2px solid #8c734e;
+    color: #1b140a;
+}
+tooltip label {
+    padding: 2px;
+    font-family: Liberation Mono;
+    font-weight: 400;
+    font-size: 14px;
+}
+#custom-update {
+    font-size: 10px;
+}
+
+#clock {
+    margin-left: 8px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+    min-width: 12px;
+    font-size: 10px;
+    padding-bottom: 1px;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#custom-screenrecording-indicator.active,
+#custom-idle-indicator.active,
+#custom-notification-silencing-indicator.active {
+    color: #52432e;
+    background-color: #b3976d;
+    border-color: #8c734e;
+}
+
+#custom-screenrecording-indicator.active {
+    color: #b3976d;
+    animation-name: blink-recording;
+    animation-duration: 0.7s;
+}
+
+@keyframes blink-recording {
+    to {
+        color: #52432e;
+    }
+}
+
+#custom-voxtype {
+    min-width: 12px;
+}
+
+#custom-voxtype.recording {
+    color: #52432e;
+    background-color: #c9a07a;
+    border-color: #8c734e;
+}

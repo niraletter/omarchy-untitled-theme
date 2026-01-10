@@ -1,0 +1,574 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+    --color00: #211c1f;
+    --color01: #a58386;
+    --color02: #83c483;
+    --color03: #c1ba86;
+    --color04: #a3baca;
+    --color05: #e19567;
+    --color06: #a2c5d2;
+    --color07: #f0ecc5;
+    --color08: #f2f2f3;
+    --color09: #cdb7b9;
+    --color10: #80c880;
+    --color11: #b9ae6a;
+    --color12: #bad6e3;
+    --color13: #e7aa86;
+    --color14: #c4dce5;
+    --color15: #f0ecc5;
+
+    --item-surface-0: color-mix(in srgb, var(--color00) 96%, black);
+    --item-surface-1: var(--color00);
+    --item-surface-2: color-mix(in srgb, var(--color01) 30%, var(--color00));
+    --item-surface-3: color-mix(in srgb, var(--color01) 48%, var(--color00));
+
+    --item-text: var(--color07);
+    --item-text-muted: color-mix(in srgb, var(--color09) 75%, var(--color00));
+    --item-text-contrast: var(--color08);
+    --item-text-inverse: var(--color00);
+
+    --item-accent: var(--color06);
+    --item-accent-warm: var(--color05);
+    --item-danger: var(--color05);
+    --item-highlight: var(--color14);
+
+    --item-username: var(--color13);
+    --item-channel-name: color-mix(
+        in srgb,
+        var(--item-text-muted) 80%,
+        var(--color01)
+    );
+    --item-channel-name-unread: var(--item-text);
+    --item-channel-name-selected: var(--item-highlight);
+    --item-mention-foreground: var(--item-text);
+    --item-message-text: var(--item-text);
+
+    --ed-glow: 0 0 20px color-mix(in srgb, var(--item-accent) 16%, transparent);
+
+    --font-primary: "Inter", "gg sans", sans-serif;
+    --font-code: "JetBrains Mono", monospace;
+}
+
+/* ══════════════════════════════════════════════════
+   DISCORD VARS
+══════════════════════════════════════════════════ */
+
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.visual-refresh {
+    --background-primary: var(--item-surface-1) !important;
+    --background-secondary: var(--item-surface-0) !important;
+    --background-secondary-alt: var(--item-surface-1) !important;
+    --background-tertiary: var(--item-surface-0) !important;
+    --background-accent: var(--item-surface-2) !important;
+    --background-floating: var(--item-surface-2) !important;
+    --background-base-lowest: var(--item-surface-0) !important;
+    --background-base-lower: var(--item-surface-0) !important;
+    --background-base-low: var(--item-surface-1) !important;
+    --background-base-tertiary: var(--item-surface-0) !important;
+    --background-surface-high: var(--item-surface-2) !important;
+    --background-surface-higher: var(--item-surface-2) !important;
+    --background-surface-highest: var(--item-surface-3) !important;
+    --bg-surface-raised: var(--item-surface-2) !important;
+    --bg-surface-overlay: var(--item-surface-1) !important;
+    --bg-base-secondary: var(--item-surface-0) !important;
+    --bg-overlay-2: var(--item-surface-2) !important;
+    --bg-overlay-3: var(--item-surface-3) !important;
+
+    --background-modifier-accent: color-mix(
+        in srgb,
+        var(--item-surface-3) 72%,
+        transparent
+    ) !important;
+    --background-modifier-hover: color-mix(
+        in srgb,
+        var(--item-accent) 12%,
+        var(--item-surface-2)
+    ) !important;
+    --background-modifier-active: color-mix(
+        in srgb,
+        var(--item-accent) 20%,
+        var(--item-surface-2)
+    ) !important;
+    --background-modifier-selected: color-mix(
+        in srgb,
+        var(--item-highlight) 22%,
+        var(--item-surface-2)
+    ) !important;
+
+    --background-mentioned: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--item-accent-warm) 20%, var(--item-surface-1))
+            0%,
+        var(--item-surface-1) 100%
+    ) !important;
+    --background-mentioned-hover: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--item-accent-warm) 30%, var(--item-surface-1))
+            0%,
+        var(--item-surface-1) 100%
+    ) !important;
+    --mention-background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--item-accent-warm) 22%, var(--item-surface-1))
+            0%,
+        var(--item-surface-1) 100%
+    ) !important;
+    --mention-foreground: var(--item-mention-foreground) !important;
+
+    --text-normal: var(--item-text) !important;
+    --text-muted: var(--item-text-muted) !important;
+    --text-primary: var(--item-text) !important;
+    --text-secondary: color-mix(
+        in srgb,
+        var(--item-text) 65%,
+        var(--item-text-muted)
+    ) !important;
+    --header-primary: var(--item-text) !important;
+    --header-secondary: color-mix(
+        in srgb,
+        var(--item-text) 70%,
+        var(--item-text-muted)
+    ) !important;
+
+    --interactive-normal: var(--item-text) !important;
+    --interactive-hover: var(--item-text-contrast) !important;
+    --interactive-active: var(--item-text-contrast) !important;
+    --interactive-muted: var(--item-channel-name) !important;
+
+    --channels-default: var(--item-channel-name) !important;
+    --channels-default-unread: var(--item-channel-name-unread) !important;
+
+    --brand-500: var(--item-accent) !important;
+    --brand-560: color-mix(
+        in srgb,
+        var(--item-accent) 24%,
+        var(--item-surface-1)
+    ) !important;
+    --text-link: var(--item-highlight) !important;
+    --channel-icon: var(--item-accent) !important;
+    --focus-primary: var(--item-highlight) !important;
+    --input-border-focus: var(--item-highlight) !important;
+
+    --button-filled-brand-background: color-mix(
+        in srgb,
+        var(--item-accent) 70%,
+        var(--item-surface-1)
+    ) !important;
+    --button-filled-brand-background-hover: color-mix(
+        in srgb,
+        var(--item-accent) 88%,
+        var(--item-surface-1)
+    ) !important;
+    --button-filled-brand-text: var(--item-text-inverse) !important;
+    --button-secondary-background: var(--item-surface-3) !important;
+    --button-secondary-background-hover: var(--item-surface-2) !important;
+    --button-secondary-text: var(--item-text) !important;
+    --button-danger-background: var(--item-danger) !important;
+    --button-danger-background-hover: color-mix(
+        in srgb,
+        var(--item-danger) 82%,
+        var(--color08)
+    ) !important;
+    --button-danger-text: var(--item-text-inverse) !important;
+
+    --status-positive: var(--color10) !important;
+    --status-warning: var(--color03) !important;
+    --status-danger: var(--item-danger) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   GLOBAL
+══════════════════════════════════════════════════ */
+
+body {
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+}
+* {
+    font-family: var(--font-primary) !important;
+}
+code,
+pre,
+[class*="codeContainer"],
+[class*="hljs"] {
+    font-family: var(--font-code) !important;
+    letter-spacing: 0 !important;
+}
+
+/* ══════════════════════════════════════════════════
+   SIDEBAR + CHAT PANELS
+══════════════════════════════════════════════════ */
+
+[class*="sidebar"],
+[class*="chatContent"] {
+    border: 1px solid color-mix(in srgb, var(--item-accent) 18%, transparent) !important;
+    border-radius: 12px !important;
+    box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--item-accent) 10%, transparent),
+        var(--ed-glow) !important;
+}
+
+[class*="chatContent"] {
+    background-color: color-mix(
+        in srgb,
+        var(--item-surface-1) 92%,
+        var(--item-surface-0)
+    ) !important;
+    margin: 0 10px 10px 0 !important;
+    border-left-color: transparent !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+[class*="sidebar"] {
+    background-color: color-mix(
+        in srgb,
+        var(--item-surface-0) 90%,
+        var(--item-surface-1)
+    ) !important;
+    margin: 0 0 10px 10px !important;
+    border-right-color: transparent !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+[class*="sidebarResizeHandle"] {
+    width: 8px !important;
+    margin: 0 -4px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* ══════════════════════════════════════════════════
+   TYPOGRAPHY
+══════════════════════════════════════════════════ */
+
+[class*="title"],
+[class*="topic"] {
+    font-weight: 700 !important;
+    letter-spacing: -0.03em !important;
+}
+
+[class*="username"]:not([style]) {
+    color: var(--item-username) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+}
+
+:is(.theme-dark, .theme-darker, .theme-midnight, .visual-refresh)
+    :is([class*="messageContent"], [class*="markup"]) {
+    color: var(--item-message-text) !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    font-weight: 400 !important;
+}
+
+[class*="timestamp"] {
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    color: rgba(165, 131, 134, 0.45) !important;
+    letter-spacing: 0 !important;
+}
+
+[class*="containerDefault"] > [class*="header"],
+[class*="category"] [class*="header"] {
+    font-size: 10.5px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: var(--color01) !important;
+}
+
+code:not(pre code) {
+    font-family: var(--font-code) !important;
+    background: rgba(185, 174, 106, 0.12) !important;
+    color: var(--color11) !important;
+    border: 1px solid rgba(185, 174, 106, 0.22) !important;
+    border-radius: 4px !important;
+    padding: 1px 5px !important;
+    font-size: 85% !important;
+}
+
+pre,
+[class*="codeContainer"] {
+    background: var(--item-surface-0) !important;
+    border: 1px solid rgba(165, 131, 134, 0.14) !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+}
+
+[class*="blockquoteContainer"] {
+    border-left: 3px solid var(--color05) !important;
+    background: rgba(225, 149, 103, 0.06) !important;
+    border-radius: 0 6px 6px 0 !important;
+}
+
+/* ══════════════════════════════════════════════════
+   CHANNEL LIST
+══════════════════════════════════════════════════ */
+
+a[data-list-item-id^="channels___"]:not([class*="modeUnread"]):not(
+        [aria-selected="true"]
+    )
+    [class*="name"]
+    *,
+li[class*="containerDefault"]:not([class*="modeUnread"]):not(
+        [class*="modeSelected"]
+    )
+    [class*="name"]
+    * {
+    color: var(--item-channel-name) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeUnread"] [class*="name"] *,
+li[class*="containerDefault"][class*="modeUnread"] [class*="name"] * {
+    color: var(--item-channel-name-unread) !important;
+    font-weight: 600 !important;
+}
+
+#channels [class*="modeSelected"] [class*="name__"] {
+    color: var(--item-channel-name-selected) !important;
+    font-weight: 700 !important;
+}
+
+a[data-list-item-id^="channels___"] svg,
+a[data-list-item-id^="channels___"] svg path {
+    fill: color-mix(
+        in srgb,
+        var(--item-accent) 55%,
+        var(--item-surface-2)
+    ) !important;
+    color: color-mix(
+        in srgb,
+        var(--item-accent) 55%,
+        var(--item-surface-2)
+    ) !important;
+}
+
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg,
+a[data-list-item-id^="channels___"][class*="modeUnread"] svg path {
+    fill: var(--item-highlight) !important;
+    color: var(--item-highlight) !important;
+}
+
+a[data-list-item-id^="channels___"]:hover {
+    background-color: color-mix(
+        in srgb,
+        var(--item-accent) 10%,
+        var(--item-surface-2)
+    ) !important;
+    box-shadow: inset 3px 0 0 0 var(--item-accent-warm) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+a[data-list-item-id^="channels___"][aria-selected="true"] {
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--item-accent) 22%, var(--item-surface-2)) 0%,
+        color-mix(in srgb, var(--item-highlight) 16%, var(--item-surface-2))
+            100%
+    ) !important;
+    box-shadow:
+        inset 3px 0 0 0 var(--item-accent),
+        inset 0 0 0 1px
+            color-mix(in srgb, var(--item-highlight) 22%, transparent) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* ══════════════════════════════════════════════════
+   MESSAGES
+══════════════════════════════════════════════════ */
+
+[id^="chat-messages-"] [class*="messageListItem"]:hover,
+[id^="chat-messages-"] [class*="messageListItem"]:hover > [class*="message"],
+[id^="chat-messages-"] [class*="messageListItem"]:hover [class*="contents"] {
+    background: color-mix(
+        in srgb,
+        var(--item-accent) 7%,
+        var(--item-surface-1)
+    ) !important;
+    border-radius: 10px !important;
+}
+
+[class*="mention"] {
+    background: rgba(162, 197, 210, 0.15) !important;
+    color: var(--color14) !important;
+    border-radius: 4px !important;
+    padding: 0 3px !important;
+    font-weight: 500 !important;
+}
+[class*="mention"]:hover {
+    background: rgba(162, 197, 210, 0.27) !important;
+    color: var(--color08) !important;
+}
+
+[class*="reaction"] {
+    background: rgba(162, 197, 210, 0.08) !important;
+    border: 1px solid rgba(162, 197, 210, 0.18) !important;
+    border-radius: 8px !important;
+    transition:
+        background 0.12s,
+        transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+[class*="reaction"]:hover {
+    background: rgba(162, 197, 210, 0.18) !important;
+    transform: scale(1.08) !important;
+}
+[class*="reactionMe"] {
+    background: rgba(225, 149, 103, 0.14) !important;
+    border-color: rgba(225, 149, 103, 0.35) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   INPUT BOX
+══════════════════════════════════════════════════ */
+
+[class*="channelTextArea"] {
+    border: 1px solid color-mix(in srgb, var(--item-accent) 20%, transparent) !important;
+    border-radius: 10px !important;
+    overflow: visible !important;
+}
+
+[class*="channelTextArea"]:focus-within {
+    box-shadow:
+        0 0 0 1px var(--item-accent) inset,
+        0 0 16px color-mix(in srgb, var(--item-accent) 28%, transparent) !important;
+    border-color: var(--item-accent) !important;
+}
+
+[class*="channelTextArea"] [class*="scrollableContainer"],
+[class*="channelTextArea"] [class*="themedBackground"] {
+    border-radius: inherit !important;
+    overflow: visible !important;
+}
+
+/* ══════════════════════════════════════════════════
+   BADGES
+══════════════════════════════════════════════════ */
+
+div[class*="unreadBar"],
+span[class*="unreadBar"],
+div[class*="numberBadge"],
+span[class*="numberBadge"],
+div[class*="textBadge"],
+span[class*="textBadge"] {
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--item-accent-warm) 88%, var(--item-surface-2))
+            0%,
+        color-mix(in srgb, var(--item-accent) 80%, var(--item-surface-2)) 100%
+    ) !important;
+    color: var(--item-text-inverse) !important;
+    font-weight: 600 !important;
+    box-shadow: 0 0 10px
+        color-mix(in srgb, var(--item-accent-warm) 38%, transparent) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   SCROLLBAR
+══════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(165, 131, 134, 0.28);
+    border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(162, 197, 210, 0.5);
+}
+
+/* ══════════════════════════════════════════════════
+   TOOLTIPS
+══════════════════════════════════════════════════ */
+
+[class*="tooltip"] {
+    background: var(--item-surface-0) !important;
+    color: var(--item-text) !important;
+    border: 1px solid rgba(165, 131, 134, 0.18) !important;
+    border-radius: 7px !important;
+    font-size: 12px !important;
+    box-shadow: 0 4px 14px rgba(33, 28, 31, 0.55) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   CONTEXT MENU
+══════════════════════════════════════════════════ */
+
+[class*="menu"] {
+    background: var(--item-surface-1) !important;
+    border: 1px solid rgba(165, 131, 134, 0.14) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 30px rgba(33, 28, 31, 0.6) !important;
+    padding: 4px !important;
+}
+[class*="item"][class*="labelContainer"] {
+    border-radius: 6px !important;
+    font-size: 13.5px !important;
+    transition: background 0.1s;
+}
+[class*="item"][class*="focused"] {
+    background: rgba(162, 197, 210, 0.1) !important;
+}
+[class*="item"][class*="danger"][class*="focused"] {
+    background: rgba(225, 149, 103, 0.14) !important;
+    color: var(--color13) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   MODALS
+══════════════════════════════════════════════════ */
+
+[class*="modal-"] [class*="root"],
+[class*="root"][class*="modal"] {
+    background: var(--item-surface-1) !important;
+    border: 1px solid rgba(165, 131, 134, 0.14) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 20px 60px rgba(33, 28, 31, 0.7) !important;
+}
+
+/* ══════════════════════════════════════════════════
+   MISC
+══════════════════════════════════════════════════ */
+
+a {
+    color: var(--color06) !important;
+}
+a:hover {
+    color: var(--color14) !important;
+}
+::selection {
+    background: rgba(162, 197, 210, 0.25) !important;
+    color: var(--color08) !important;
+}
+[class*="divider"] {
+    border-color: rgba(165, 131, 134, 0.1) !important;
+}
+[class*="speaking"] {
+    box-shadow: 0 0 0 2px var(--color10) !important;
+}
+
+[class*="messagesWrapper"] {
+    animation: ed-fade 0.15s ease;
+}
+@keyframes ed-fade {
+    from {
+        opacity: 0;
+        transform: translateY(3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
