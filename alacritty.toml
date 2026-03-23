@@ -26,3 +26,6 @@ white   = "#f0ecc5"
 [colors.cursor]
 text   = "#241D22"
 cursor = "#f0ecc5"
+
+[window]
+opacity = 0.8
